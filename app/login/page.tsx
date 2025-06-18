@@ -47,7 +47,7 @@ export default function LoginPage() {
       }
     } catch (err) {
       console.error("Login error:", err)
-      setError(err instanceof Error ? err.message : "An unexpected error occurred")
+      setError(err instanceof Error ? err.message : "Ha ocurrido un error inesperado")
     } finally {
       setLoading(false)
     }
@@ -55,23 +55,23 @@ export default function LoginPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600 mx-auto"></div>
-          <p className="mt-2 text-gray-600">Loading...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto"></div>
+          <p className="mt-2 text-gray-600">Cargando...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         {/* Back to Home */}
         <div className="mb-8">
           <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors">
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Home
+            Volver al Inicio
           </Link>
         </div>
 
@@ -81,14 +81,14 @@ export default function LoginPage() {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="w-8 h-8 flex items-center justify-center">
-                <svg className="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7v10c0 5.55 3.84 10 9 11 1.16.21 2.84.21 4 0 5.16-1 9-5.45 9-11V7l-10-5z" />
                 </svg>
               </div>
-              <span className="text-orange-600 font-semibold text-xl">ItalyTravel</span>
+              <span className="text-teal-600 font-semibold text-xl">ItalyTren</span>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-            <p className="text-gray-600">Sign in to access the backoffice</p>
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">Bienvenido de Nuevo</h1>
+            <p className="text-gray-600">Inicia sesión para acceder al panel de administración</p>
           </div>
 
           {/* Error Message */}
@@ -102,7 +102,7 @@ export default function LoginPage() {
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email Address
+                Correo Electrónico
               </label>
               <input
                 id="email"
@@ -110,14 +110,14 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                placeholder="Enter your email"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                placeholder="Ingresa tu correo electrónico"
               />
             </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                Password
+                Contraseña
               </label>
               <div className="relative">
                 <input
@@ -126,8 +126,8 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                  placeholder="Enter your password"
+                  className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                  placeholder="Ingresa tu contraseña"
                 />
                 <button
                   type="button"
@@ -142,14 +142,14 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 bg-orange-600 hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full py-3 px-4 bg-teal-600 hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500"
             >
-              {loading ? "Signing in..." : "Sign In"}
+              {loading ? "Iniciando sesión..." : "Iniciar Sesión"}
             </button>
           </form>
 
           {/* Demo Credentials */}
-          <div className="mt-8 p-4 bg-gray-50 rounded-lg">
+          {/* <div className="mt-8 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600 mb-2 font-medium">Demo Credentials:</p>
             <p className="text-xs text-gray-500">Email: admin@italytravel.com</p>
             <p className="text-xs text-gray-500">Password: admin123</p>
@@ -157,12 +157,12 @@ export default function LoginPage() {
               <p className="text-xs text-green-700 font-medium">✅ Supabase Connected</p>
               <p className="text-xs text-green-600 mt-1">Ready to authenticate with your Supabase project</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Footer */}
         <div className="text-center mt-8">
-          <p className="text-sm text-gray-500">© 2024 ItalyTravel. All rights reserved.</p>
+          <p className="text-sm text-gray-500">© 2024 ItalyTren. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>

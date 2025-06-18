@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button"
-import { Users, Shield, Award, ChevronRight, ChevronDown, Phone, Mail, Globe, Star } from "lucide-react"
+import { Users, Shield, Award, ChevronRight, ChevronDown, Phone, Mail, Globe, Star, Search, Train } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function JapanTravelLanding() {
+export default function ItaliaTrainLanding() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-4 sm:py-auto">
         {/* Rounded Container */}
-        <div className="relative w-[90vw] h-[90vh] mx-auto rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
+        <div className="relative w-full sm:w-[90vw] max-w-none sm:max-w-none h-[calc(100vh-2rem)] sm:h-[90vh] mx-auto rounded-3xl overflow-hidden border-2 sm:border-4 border-white shadow-lg sm:shadow-2xl">
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image src="/images/colosseum-bg.jpg" alt="Roman Colosseum" fill className="object-cover" priority />
@@ -18,77 +18,164 @@ export default function JapanTravelLanding() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 min-h-[90vh] flex flex-col">
+          <div className="relative z-10 h-[calc(100vh-2rem)] sm:h-[90vh] flex flex-col">
             {/* Header inside rounded container */}
-            <header className="p-8">
+            <header className="p-4 sm:p-6 lg:p-8 flex-shrink-0">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2L2 7v10c0 5.55 3.84 10 9 11 1.16.21 2.84.21 4 0 5.16-1 9-5.45 9-11V7l-10-5z" />
-                    </svg>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
+                    <Train className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <span className="text-white font-semibold text-xl">ItalyTravel</span>
+                  <span className="text-white font-semibold text-lg sm:text-xl">ItalyTren</span>
                 </div>
 
-                <nav className="hidden md:flex items-center space-x-8">
-                  <a href="#home" className="text-white/80 hover:text-white transition-colors">
-                    Home
+                {/* Desktop Navigation */}
+                <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                  <a href="#inicio" className="text-white/80 hover:text-white transition-colors text-sm xl:text-base">
+                    Inicio
                   </a>
-                  <a href="#about" className="text-white/80 hover:text-white transition-colors">
-                    About us
+                  <a href="#rutas" className="text-white/80 hover:text-white transition-colors text-sm xl:text-base">
+                    Rutas de Tren
                   </a>
-                  <a href="#gallery" className="text-white/80 hover:text-white transition-colors">
-                    Gallery
+                  <a href="#tipos" className="text-white/80 hover:text-white transition-colors text-sm xl:text-base">
+                    Tipos de Tren
                   </a>
-                  <a href="#packages" className="text-white/80 hover:text-white transition-colors">
-                    Travel Package
+                  <a href="#estaciones" className="text-white/80 hover:text-white transition-colors text-sm xl:text-base">
+                    Estaciones
                   </a>
-                  <a href="#offers" className="text-white/80 hover:text-white transition-colors">
-                    Offers
+                  <a href="#billetes" className="text-white/80 hover:text-white transition-colors text-sm xl:text-base">
+                    Comprar Billetes
+                  </a>
+                  <a href="#blog" className="text-white/80 hover:text-white transition-colors text-sm xl:text-base">
+                    Blog
+                  </a>
+                  <a href="#faqs" className="text-white/80 hover:text-white transition-colors text-sm xl:text-base">
+                    FAQs
                   </a>
                 </nav>
 
-                <div className="flex items-center space-x-4">
+                {/* Mobile Menu Button */}
+                <div className="lg:hidden">
+                  <Button variant="ghost" className="text-white hover:bg-white/10 p-2">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </Button>
+                </div>
+
+                {/* Desktop Actions */}
+                <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
+                  <div className="flex items-center space-x-2">
+                    <select className="bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-white/40 hover:bg-white/25 transition-all duration-300">
+                      <option value="es" className="text-gray-900">ES</option>
+                      <option value="en" className="text-gray-900">EN</option>
+                    </select>
+                  </div>
                   <Link href="/login">
-                    <Button variant="ghost" className="text-white hover:bg-white/10">
+                    <Button variant="ghost" className="text-white hover:bg-white/10 text-sm">
                       Login
                     </Button>
                   </Link>
-                  <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white">
-                    Trip Now
-                    <ChevronRight className="ml-2 h-4 w-4" />
+                  <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white text-sm px-4 py-2">
+                    Buscar Trenes
+                    <ChevronRight className="ml-2 h-3 w-3" />
                   </Button>
                 </div>
               </div>
             </header>
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col items-center justify-center text-center px-8 pb-20">
-              <div className="mb-6">
-                <span className="text-white/90 text-lg font-medium italic">Discover Italy</span>
+            <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 min-h-0">
+              <div className="mb-4 sm:mb-6">
+                <span className="text-white/90 text-base sm:text-lg font-medium italic">Viaja por Italia</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight max-w-5xl">
-                A Journey of Tradition, Innovation, and Natural Beauty
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight max-w-6xl">
+                Explora las mejores rutas de tren en Italia
               </h1>
 
-              <Button
-                size="lg"
-                className="bg-white/90 hover:bg-white text-gray-900 px-8 py-4 text-lg font-medium rounded-full"
-              >
-                Find your best destination
-              </Button>
+              {/* Search Bar - Mobile First */}
+              <div className="relative bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl sm:rounded-full p-3 sm:p-2 mb-6 sm:mb-8 w-full max-w-5xl shadow-2xl">
+                {/* Mobile Layout - Stacked */}
+                <div className="flex flex-col sm:hidden space-y-3">
+                  <select className="w-full bg-transparent text-white placeholder-white/70 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/40 border border-white/30">
+                    <option value="" className="text-gray-900">Origen</option>
+                    <option value="roma" className="text-gray-900">Roma</option>
+                    <option value="milan" className="text-gray-900">Milán</option>
+                    <option value="florencia" className="text-gray-900">Florencia</option>
+                    <option value="venecia" className="text-gray-900">Venecia</option>
+                    <option value="napoles" className="text-gray-900">Nápoles</option>
+                  </select>
+                  <select className="w-full bg-transparent text-white placeholder-white/70 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/40 border border-white/30">
+                    <option value="" className="text-gray-900">Destino</option>
+                    <option value="roma" className="text-gray-900">Roma</option>
+                    <option value="milan" className="text-gray-900">Milán</option>
+                    <option value="florencia" className="text-gray-900">Florencia</option>
+                    <option value="venecia" className="text-gray-900">Venecia</option>
+                    <option value="napoles" className="text-gray-900">Nápoles</option>
+                  </select>
+                  <input 
+                    type="date" 
+                    className="w-full bg-transparent text-white placeholder-white/70 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/40 border border-white/30 [color-scheme:dark]" 
+                    placeholder="Fecha"
+                  />
+                  <Button className="w-full bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white py-3 rounded-xl transition-all duration-300">
+                    <Search className="mr-2 h-4 w-4" />
+                    Buscar Trenes
+                  </Button>
+                </div>
+
+                {/* Desktop Layout - Inline */}
+                <div className="hidden sm:flex items-center gap-1">
+                  <div className="flex-1">
+                    <select className="w-full bg-transparent text-white placeholder-white/70 px-3 lg:px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-white/30 border-0 text-sm lg:text-base">
+                      <option value="" className="text-gray-900">Origen</option>
+                      <option value="roma" className="text-gray-900">Roma</option>
+                      <option value="milan" className="text-gray-900">Milán</option>
+                      <option value="florencia" className="text-gray-900">Florencia</option>
+                      <option value="venecia" className="text-gray-900">Venecia</option>
+                      <option value="napoles" className="text-gray-900">Nápoles</option>
+                    </select>
+                  </div>
+                  <div className="w-px h-8 bg-white/40"></div>
+                  <div className="flex-1">
+                    <select className="w-full bg-transparent text-white placeholder-white/70 px-3 lg:px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-white/30 border-0 text-sm lg:text-base">
+                      <option value="" className="text-gray-900">Destino</option>
+                      <option value="roma" className="text-gray-900">Roma</option>
+                      <option value="milan" className="text-gray-900">Milán</option>
+                      <option value="florencia" className="text-gray-900">Florencia</option>
+                      <option value="venecia" className="text-gray-900">Venecia</option>
+                      <option value="napoles" className="text-gray-900">Nápoles</option>
+                    </select>
+                  </div>
+                  <div className="w-px h-8 bg-white/40"></div>
+                  <div className="flex-1">
+                    <input 
+                      type="date" 
+                      className="w-full bg-transparent text-white placeholder-white/70 px-3 lg:px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-white/30 border-0 [color-scheme:dark] text-sm lg:text-base" 
+                      placeholder="Fecha"
+                    />
+                  </div>
+                  <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-6 lg:px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-sm lg:text-base">
+                    <Search className="mr-2 h-4 w-4" />
+                    Buscar
+                  </Button>
+                </div>
+              </div>
+
+              <p className="text-white/80 text-base sm:text-lg max-w-3xl px-4">
+                Descubre la manera más cómoda y rápida de viajar por Italia con nuestros trenes de alta velocidad
+              </p>
             </div>
 
             {/* Bottom Section */}
-            <div className="flex items-end justify-between p-8">
+            <div className="flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between p-4 sm:p-6 lg:p-8 space-y-4 lg:space-y-0 flex-shrink-0">
               {/* World Travel Awards Badge */}
               <div className="flex items-center space-x-2 text-white">
-                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                  <Award className="h-6 w-6 text-white" />
+                <div className="w-8 h-8 lg:w-12 lg:h-12 bg-orange-600 rounded-full flex items-center justify-center">
+                  <Award className="h-4 w-4 lg:h-6 lg:w-6 text-white" />
                 </div>
-                <div className="text-sm">
+                <div className="text-xs lg:text-sm">
                   <div className="font-semibold">WORLD</div>
                   <div className="font-semibold">TRAVEL</div>
                   <div className="font-semibold">AWARDS</div>
@@ -96,262 +183,236 @@ export default function JapanTravelLanding() {
               </div>
 
               {/* Center Text */}
-              <div className="text-center text-white/90 max-w-2xl">
-                <p className="text-sm md:text-base">
-                  Step into the heart of Italy with curated travel experiences that showcase its timeless temples,
-                  ancient cities, and breathtaking landscapes.
+              <div className="text-center text-white/90 max-w-2xl px-4">
+                <p className="text-xs sm:text-sm lg:text-sm xl:text-base">
+                  Descubre el corazón de Italia con experiencias de viaje únicas que muestran sus ciudades eternas,
+                  paisajes impresionantes y rica cultura ferroviaria.
                 </p>
               </div>
 
-              {/* Tripadvisor Logo */}
+              {/* Rating Badge */}
               <div className="flex items-center space-x-2 text-white">
-                <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-xs font-bold">T</span>
+                <div className="w-6 h-6 lg:w-8 lg:h-8 bg-green-600 rounded-full flex items-center justify-center">
+                  <span className="text-xs font-bold">★</span>
                 </div>
-                <span className="font-semibold">Tripadvisor</span>
+                <div className="text-xs lg:text-sm">
+                  <div className="font-semibold">4.9/5</div>
+                  <div className="text-xs opacity-80">Rating</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-12 bg-white">
+      {/* Popular Routes Section */}
+      <section className="py-12 bg-white" id="rutas">
         <div className="container mx-auto px-6">
-          {/* Container */}
           <div className="relative max-w-6xl mx-auto bg-white p-8 md:p-12">
-            {/* About us label */}
-            <div className="absolute top-8 right-8 flex items-center space-x-4">
+            <div className="text-center mb-8 flex items-center justify-center space-x-4">
               <div className="w-12 h-px bg-gray-300"></div>
-              <span className="text-gray-600 font-medium italic">About us</span>
+              <span className="text-gray-600 font-medium italic">Rutas Populares</span>
               <div className="w-12 h-px bg-gray-300"></div>
             </div>
 
-            {/* Main Content */}
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 max-w-4xl">
-                We specialize in creating tailor-made journeys across Italy
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 max-w-4xl mx-auto">
+                Descubre las rutas de tren más populares de Italia
               </h2>
-              <p className="text-lg text-gray-500 max-w-3xl">
-                blending must-see landmarks with hidden gems to give you a true sense of this beautiful country.
+              <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+                Viaja cómodamente entre las principales ciudades italianas con nuestros trenes de alta velocidad
               </p>
             </div>
 
-            {/* Image Section */}
-            <div className="relative rounded-2xl overflow-hidden mb-8">
-              <Image
-                src="/images/lake-como.jpg"
-                alt="Charming Italian lakeside town with traditional architecture"
-                width={800}
-                height={400}
-                className="w-full h-[400px] object-cover"
-              />
-              <div className="absolute inset-0 bg-black/20" />
-
-              {/* Read More Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Button className="bg-white text-gray-900 hover:bg-gray-100 px-6 py-3 rounded-full font-medium">
-                  Read More
-                </Button>
-              </div>
-            </div>
-
-            {/* Description Text */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Our team is made up of Italy enthusiasts, local experts, and travel specialists dedicated to crafting
-                  unique and meaningful experiences.
-                </p>
-              </div>
-              <div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  From Rome's vibrant energy to the quiet temples of Tuscany, and from the scenic landscapes of Amalfi
-                  to the magical shores of Cinque Terre, we strive to bring out the very best of Italy in every journey
-                  we plan.
-                </p>
-              </div>
-            </div>
-
-            {/* Statistics */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">95%</div>
-                <p className="text-gray-600 text-sm">of travelers would recommend us to friends and family.</p>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">100+</div>
-                <p className="text-gray-600 text-sm">unique itineraries crafted each year to showcase Italy.</p>
-              </div>
-              <div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">4.9/5</div>
-                <p className="text-gray-600 text-sm">average rating from hundreds of happy customers.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Destinations Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-6">
-          {/* Container */}
-          <div className="relative max-w-6xl mx-auto bg-white p-8 md:p-12">
-            {/* Header */}
-            <div className="flex items-start justify-between mb-8">
-              <div className="flex-1">
-                <div className="text-center mb-6 flex items-center justify-center space-x-4">
-                  <div className="w-12 h-px bg-gray-300"></div>
-                  <span className="text-gray-600 font-medium italic">Popular Destination</span>
-                  <div className="w-12 h-px bg-gray-300"></div>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Journey Through Italy's</h2>
-                <h3 className="text-3xl md:text-4xl text-gray-400 mb-6">Best Destinations</h3>
-              </div>
-
-              <div className="flex flex-col items-end">
-                <p className="text-sm text-gray-600 mb-4 max-w-xs text-right">
-                  Discover Italy's metropolitan past city, just a short distance from Rome. Yokohama offers a unique
-                  blend of traditional and modern attractions.
-                </p>
-                <Button className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 rounded-full">Read More</Button>
-              </div>
-            </div>
-
-            {/* Destination Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Rome */}
-              <div className="group">
-                <div className="relative rounded-2xl overflow-hidden mb-4 h-64">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {/* Roma - Nápoles */}
+              <div className="group bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden">
+                <div className="relative h-48">
                   <Image
                     src="/images/colosseum-interior.jpg"
-                    alt="Interior of the Roman Colosseum"
+                    alt="Roma - Nápoles"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
-                      <span className="text-gray-900 font-semibold text-sm">1</span>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Alta Velocidad
                     </div>
                   </div>
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Rome</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Dive into the vibrant heart of Italy! Rome dazzles with its endless energy, from the iconic Colosseum
-                  to the bustling markets of Trastevere and the tranquil gardens of Villa Borghese.
-                </p>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Roma - Nápoles</h3>
+                  <p className="text-gray-600 mb-4">Desde 1h 10min | Desde €29</p>
+                  <p className="text-sm text-gray-500 mb-4">
+                    Conecta la capital con la hermosa ciudad del sur de Italia. Disfruta de vistas espectaculares del paisaje italiano.
+                  </p>
+                  <Link href="/rutas/roma-napoles">
+                    <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">
+                      Ver Horarios
+                    </Button>
+                  </Link>
+                </div>
               </div>
 
-              {/* Florence */}
-              <div className="group">
-                <div className="relative rounded-2xl overflow-hidden mb-4 h-64">
+              {/* Roma - Florencia */}
+              <div className="group bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden">
+                <div className="relative h-48">
                   <Image
                     src="/images/florence-duomo.jpg"
-                    alt="Florence Cathedral and cityscape"
+                    alt="Roma - Florencia"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
-                      <span className="text-gray-900 font-semibold text-sm">2</span>
+                    <div className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Frecciarossa
                     </div>
                   </div>
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Florence</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Discover Italy's Renaissance jewel city, just a short distance from Rome. Florence offers a unique
-                  blend of traditional and modern attractions.
-                </p>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Roma - Florencia</h3>
+                  <p className="text-gray-600 mb-4">Desde 1h 32min | Desde €45</p>
+                  <p className="text-sm text-gray-500 mb-4">
+                    Viaja al corazón del Renacimiento italiano. La ruta más popular para los amantes del arte y la cultura.
+                  </p>
+                  <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">
+                    Ver Horarios
+                  </Button>
+                </div>
               </div>
 
-              {/* Venice */}
-              <div className="group">
-                <div className="relative rounded-2xl overflow-hidden mb-4 h-64">
+              {/* Milán - Venecia */}
+              <div className="group bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden">
+                <div className="relative h-48">
                   <Image
                     src="/images/venice-grand-canal.jpg"
-                    alt="Venice Grand Canal with gondola"
+                    alt="Milán - Venecia"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md">
-                      <span className="text-gray-900 font-semibold text-sm">3</span>
+                    <div className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Italo
                     </div>
                   </div>
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Venice</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Escape to Italy's floating paradise. Venice is renowned for its crystal-clear canals, white-sand
-                  beaches, and rich Venetian culture.
-                </p>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Milán - Venecia</h3>
+                  <p className="text-gray-600 mb-4">Desde 2h 25min | Desde €35</p>
+                  <p className="text-sm text-gray-500 mb-4">
+                    Desde la capital de la moda hasta la ciudad flotante. Una experiencia única atravesando el norte de Italia.
+                  </p>
+                  <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white">
+                    Ver Horarios
+                  </Button>
+                </div>
               </div>
+            </div>
+
+            <div className="text-center">
+              <a href="#tipos">
+                <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-3 rounded-full">
+                  Ver Más Información
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Informational Section */}
-      <section className="py-12 bg-white">
+      {/* Train Types Section */}
+      <section className="py-12 bg-gray-50" id="tipos">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Text Content */}
-              <div>
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-px bg-gray-300"></div>
-                  <span className="text-gray-600 font-medium italic">Experience Italy</span>
-                  <div className="w-12 h-px bg-gray-300"></div>
+          <div className="relative max-w-6xl mx-auto bg-white rounded-3xl p-8 md:p-12">
+            <div className="text-center mb-8 flex items-center justify-center space-x-4">
+              <div className="w-12 h-px bg-gray-300"></div>
+              <span className="text-gray-600 font-medium italic">Tipos de Tren</span>
+              <div className="w-12 h-px bg-gray-300"></div>
+            </div>
+
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Conoce nuestros trenes de alta velocidad
+              </h2>
+              <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+                Viaja con los trenes más modernos y rápidos de Europa. Comodidad, velocidad y puntualidad garantizada.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Frecciarossa */}
+              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Train className="h-8 w-8 text-red-600" />
                 </div>
-
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Immerse Yourself in Italy's Rich</h2>
-                <h3 className="text-3xl md:text-4xl text-gray-400 mb-6">Cultural Heritage</h3>
-
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  From the ancient ruins of Rome to the Renaissance masterpieces of Florence, Italy offers an
-                  unparalleled journey through history, art, and culture. Our expertly crafted tours ensure you
-                  experience the very best of what this magnificent country has to offer.
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Frecciarossa</h3>
+                <div className="mb-4">
+                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Hasta 300 km/h
+                  </span>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  El tren de alta velocidad más avanzado de Italia. Conecta las principales ciudades con máximo confort y velocidad.
                 </p>
-
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  Whether you're exploring the romantic canals of Venice, savoring authentic cuisine in Tuscany, or
-                  walking through the preserved streets of Pompeii, every moment becomes a treasured memory that will
-                  last a lifetime.
-                </p>
-
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full text-lg font-medium">
-                  Start Your Journey
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
+                <ul className="text-sm text-gray-500 space-y-2">
+                  <li>• WiFi gratuito</li>
+                  <li>• Asientos reclinables</li>
+                  <li>• Servicio de restauración</li>
+                  <li>• Enchufes en cada asiento</li>
+                </ul>
               </div>
 
-              {/* Image */}
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden">
-                  <Image
-                    src="/images/florence-duomo.jpg"
-                    alt="Florence Cathedral and Renaissance architecture"
-                    width={600}
-                    height={500}
-                    className="w-full h-[500px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              {/* Italo */}
+              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Train className="h-8 w-8 text-purple-600" />
                 </div>
-
-                {/* Floating Stats Card */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
-                  <div className="flex items-center space-x-4">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-900">2000+</div>
-                      <div className="text-sm text-gray-600">Happy Travelers</div>
-                    </div>
-                    <div className="w-px h-12 bg-gray-200"></div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-900">15+</div>
-                      <div className="text-sm text-gray-600">Years Experience</div>
-                    </div>
-                  </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Italo</h3>
+                <div className="mb-4">
+                  <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Hasta 300 km/h
+                  </span>
                 </div>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Trenes modernos con diseño italiano distintivo. Ofrece una experiencia de viaje premium y sostenible.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2">
+                  <li>• Entretenimiento a bordo</li>
+                  <li>• Asientos ergonómicos</li>
+                  <li>• Bar a bordo</li>
+                  <li>• Ambiente silencioso</li>
+                </ul>
               </div>
+
+              {/* Frecciargento */}
+              <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Train className="h-8 w-8 text-gray-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Frecciargento</h3>
+                <div className="mb-4">
+                  <span className="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Hasta 250 km/h
+                  </span>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Conecta el norte y sur de Italia pasando por Roma. Ideal para rutas panorámicas y ciudades medianas.
+                </p>
+                <ul className="text-sm text-gray-500 space-y-2">
+                  <li>• Vistas panorámicas</li>
+                  <li>• Conexiones regionales</li>
+                  <li>• Precios competitivos</li>
+                  <li>• Horarios frecuentes</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-3 rounded-full">
+                Comparar Trenes
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
@@ -365,57 +426,59 @@ export default function JapanTravelLanding() {
             {/* Gallery label */}
             <div className="text-center mb-8 flex items-center justify-center space-x-4">
               <div className="w-12 h-px bg-gray-300"></div>
-              <span className="text-gray-600 font-medium italic">Gallery</span>
+              <span className="text-gray-600 font-medium italic">Galería</span>
               <div className="w-12 h-px bg-gray-300"></div>
             </div>
 
             {/* Main Title */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                Discover Italy's Landscapes, <span className="text-gray-400">Culture,</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Descubre los paisajes, la cultura y momentos únicos de Italia
               </h2>
-              <h3 className="text-3xl md:text-4xl text-gray-400">and Moments in Photos</h3>
+              <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+                Explora nuestra galería curada que captura la belleza, cultura y momentos inolvidables de nuestros viajes por Italia
+              </p>
             </div>
 
             {/* Gallery Grid - Masonry Style */}
             <div className="relative mb-8">
               {/* Top Row */}
-              <div className="grid grid-cols-4 gap-4 mb-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                 {/* Image 1 - Tall */}
-                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-80">
+                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-80">
                   <Image
                     src="/images/venice-canal.jpg"
-                    alt="Venice canal with colorful buildings"
+                    alt="Canal de Venecia con edificios coloridos"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
                 {/* Image 2 - Full Height */}
-                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-80">
+                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-80">
                   <Image
                     src="/images/milan-cathedral.jpg"
-                    alt="Milan Cathedral Gothic architecture"
+                    alt="Catedral de Milán - Arquitectura gótica"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
                 {/* Image 3 - Full Height */}
-                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-80">
+                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-80">
                   <Image
                     src="/images/david-florence.jpg"
-                    alt="Michelangelo's David statue in Florence"
+                    alt="David de Miguel Ángel en Florencia"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
                 {/* Image 4 - Tall */}
-                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-80">
+                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-80">
                   <Image
                     src="/images/positano-amalfi.jpg"
-                    alt="Positano on the Amalfi Coast"
+                    alt="Positano en la Costa Amalfitana"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -423,32 +486,32 @@ export default function JapanTravelLanding() {
               </div>
 
               {/* Bottom Row */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Image 5 - Wide */}
-                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-64">
+                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-48 md:h-64">
                   <Image
                     src="/images/pompeii-vesuvius.jpg"
-                    alt="Pompeii ruins with Mount Vesuvius"
+                    alt="Ruinas de Pompeya con el Monte Vesubio"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
                 {/* Image 6 - Wide */}
-                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-64">
+                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-48 md:h-64">
                   <Image
                     src="/images/cinque-terre.jpg"
-                    alt="Cinque Terre colorful cliffside village"
+                    alt="Cinque Terre - Pueblo colorido en acantilado"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
                 {/* Image 7 - Wide */}
-                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-64">
+                <div className="relative rounded-2xl overflow-hidden group cursor-pointer h-48 md:h-64">
                   <Image
                     src="/images/lake-como.jpg"
-                    alt="Lake Como charming street scene"
+                    alt="Lago Como - Escena callejera encantadora"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -456,20 +519,329 @@ export default function JapanTravelLanding() {
               </div>
 
               {/* Explore Gallery Button - Centered in section */}
-              <div className="absolute inset-0 flex items-center justify-center z-10 mt-[60px]">
-                <Button className="bg-white text-gray-900 hover:bg-gray-100 px-6 py-3 rounded-full text-lg font-medium shadow-lg">
-                  Explore Gallery
-                </Button>
+              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                <div className="pointer-events-auto">
+                  <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-medium shadow-lg border border-gray-200 mt-16">
+                    Explorar Galería
+                  </Button>
+                </div>
               </div>
             </div>
 
-            {/* Description Text */}
-            <div className="text-center">
-              <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Step into Italy through our curated gallery, capturing the beauty, culture, and unforgettable moments
-                from our journeys across the country. From iconic landmarks to hidden gems, experience Italy in every
-                image.
+            {/* Call to Action */}
+            {/* <div className="text-center mt-12">
+              <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-3 rounded-full">
+                Ver Todas las Fotos
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div> */}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Train Stations Section */}
+      <section className="py-12 bg-white" id="estaciones">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center space-x-4 mb-6">
+                <div className="w-12 h-px bg-gray-300"></div>
+                <span className="text-gray-600 font-medium italic">Estaciones Principales</span>
+                <div className="w-12 h-px bg-gray-300"></div>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Las estaciones de tren más importantes de Italia
+              </h2>
+              <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+                Modernas, cómodas y perfectamente conectadas. Nuestras estaciones ofrecen todos los servicios necesarios para tu viaje.
               </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              {/* Roma Termini */}
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/colosseum-interior.jpg"
+                    alt="Roma Termini"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-xl font-bold">Roma Termini</h3>
+                    <p className="text-sm opacity-90">Estación Central de Roma</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">
+                    La estación más grande de Italia y principal hub ferroviario del país. Conecta con todas las principales ciudades italianas y europeas.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <strong className="text-gray-900">Servicios:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• 32 andenes</li>
+                        <li>• WiFi gratuito</li>
+                        <li>• Restaurantes</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong className="text-gray-900">Conexiones:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• Metro líneas A y B</li>
+                        <li>• Autobuses urbanos</li>
+                        <li>• Taxi y transporte</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Milano Centrale */}
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/milan-cathedral.jpg"
+                    alt="Milano Centrale"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-xl font-bold">Milano Centrale</h3>
+                    <p className="text-sm opacity-90">Estación Central de Milán</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">
+                    Una de las estaciones más hermosas de Europa con arquitectura Art Déco. Punto de partida hacia el norte de Italia y Europa.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <strong className="text-gray-900">Servicios:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• 24 andenes</li>
+                        <li>• Centros comerciales</li>
+                        <li>• Salas VIP</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong className="text-gray-900">Conexiones:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• Metro líneas 2 y 3</li>
+                        <li>• Aeropuerto Malpensa</li>
+                        <li>• Transporte público</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Firenze Santa Maria Novella */}
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/florence-duomo.jpg"
+                    alt="Firenze Santa Maria Novella"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-xl font-bold">Firenze S.M.N.</h3>
+                    <p className="text-sm opacity-90">Estación Central de Florencia</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">
+                    Puerta de entrada al corazón del Renacimiento italiano. Ubicada a pocos minutos del centro histórico de Florencia.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <strong className="text-gray-900">Servicios:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• 19 andenes</li>
+                        <li>• Farmacia 24h</li>
+                        <li>• Tiendas y cafés</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong className="text-gray-900">Conexiones:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• Autobuses urbanos</li>
+                        <li>• 10 min a pie al Duomo</li>
+                        <li>• Taxi disponibles</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Venezia Santa Lucia */}
+              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/venice-grand-canal.jpg"
+                    alt="Venezia Santa Lucia"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-xl font-bold">Venezia S. Lucia</h3>
+                    <p className="text-sm opacity-90">Estación Central de Venecia</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4">
+                    La única estación ferroviaria en el centro histórico de Venecia, con acceso directo al Gran Canal y los principales sitios turísticos.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <strong className="text-gray-900">Servicios:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• 14 andenes</li>
+                        <li>• Consigna equipaje</li>
+                        <li>• Información turística</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <strong className="text-gray-900">Conexiones:</strong>
+                      <ul className="text-gray-600 mt-1">
+                        <li>• Vaporetti (barcos)</li>
+                        <li>• Puente de Calatrava</li>
+                        <li>• Plaza San Marco</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-3 rounded-full">
+                Ver Todas las Estaciones
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-12 bg-gray-50" id="blog">
+        <div className="container mx-auto px-6">
+          <div className="relative max-w-6xl mx-auto bg-white rounded-3xl p-8 md:p-12">
+            <div className="text-center mb-8 flex items-center justify-center space-x-4">
+              <div className="w-12 h-px bg-gray-300"></div>
+              <span className="text-gray-600 font-medium italic">Blog</span>
+              <div className="w-12 h-px bg-gray-300"></div>
+            </div>
+
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Consejos y guías para viajar en tren por Italia
+              </h2>
+              <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+                Descubre los mejores consejos, rutas recomendadas y secretos para aprovechar al máximo tu viaje en tren por Italia
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {/* Blog Post 1 */}
+              <article className="bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden group">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/florence-duomo.jpg"
+                    alt="Guía completa para viajar en tren por Italia"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Guía de Viaje
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="text-sm text-gray-500 mb-3">15 Diciembre 2024</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    Guía completa para viajar en tren por Italia: Todo lo que necesitas saber
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Descubre cómo planificar tu viaje perfecto en tren por Italia, desde la compra de billetes hasta los mejores asientos y servicios a bordo.
+                  </p>
+                  <Button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0">
+                    Leer más →
+                  </Button>
+                </div>
+              </article>
+
+              {/* Blog Post 2 */}
+              <article className="bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden group">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/venice-grand-canal.jpg"
+                    alt="Las 10 rutas de tren más bonitas de Italia"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Rutas
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="text-sm text-gray-500 mb-3">12 Diciembre 2024</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    Las 10 rutas de tren más bonitas de Italia que debes conocer
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Explora las rutas ferroviarias más espectaculares de Italia, desde los Alpes hasta la costa mediterránea, con paisajes inolvidables.
+                  </p>
+                  <Button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0">
+                    Leer más →
+                  </Button>
+                </div>
+              </article>
+
+              {/* Blog Post 3 */}
+              <article className="bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden group">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/colosseum-interior.jpg"
+                    alt="Cómo ahorrar dinero en billetes de tren en Italia"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      Consejos
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="text-sm text-gray-500 mb-3">10 Diciembre 2024</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    Cómo ahorrar dinero en billetes de tren: Trucos y ofertas especiales
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Aprende los mejores trucos para conseguir billetes de tren baratos en Italia y aprovecha las ofertas especiales disponibles.
+                  </p>
+                  <Button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0">
+                    Leer más →
+                  </Button>
+                </div>
+              </article>
+            </div>
+
+            <div className="text-center">
+              <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-3 rounded-full">
+                Ver Todos los Artículos
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
@@ -483,62 +855,57 @@ export default function JapanTravelLanding() {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center space-x-4 mb-6">
                 <div className="w-12 h-px bg-gray-300"></div>
-                <span className="text-gray-600 font-medium italic">Why travel with us</span>
+                <span className="text-gray-600 font-medium italic">Por qué elegir ItalyTren</span>
                 <div className="w-12 h-px bg-gray-300"></div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Choosing the right travel partner can make
+                La mejor experiencia de viaje en tren por toda Italia te espera
               </h2>
-              <h3 className="text-3xl md:text-4xl text-gray-400">all the difference in your journey.</h3>
             </div>
 
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Authenticity */}
-              <div className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-                  <Shield className="h-8 w-8 text-orange-600" />
+              {/* Reliability */}
+              <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Shield className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Authenticity</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Confiabilidad</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Experience genuine Italian culture through local connections and traditional practices that showcase
-                  the real heart of Italy.
+                  Trenes puntuales y seguros con tecnología de última generación para garantizar tu comodidad y tranquilidad en cada viaje.
                 </p>
               </div>
 
-              {/* Expert Knowledge */}
-              <div className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-                  <Award className="h-8 w-8 text-orange-600" />
+              {/* Best Prices */}
+              <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Award className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Expert Knowledge</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Mejores Precios</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Our local experts provide insider insights and hidden gems you won't find elsewhere, ensuring
-                  unforgettable experiences.
+                  Ofertas exclusivas y precios competitivos para que puedas viajar más por menos, con opciones para todos los presupuestos.
                 </p>
               </div>
 
-              {/* Personalized Service */}
-              <div className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-                  <Users className="h-8 w-8 text-orange-600" />
+              {/* Easy Booking */}
+              <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Users className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Personalized Service</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Reserva Fácil</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Tailored itineraries designed around your interests and travel preferences for a truly personalized
-                  journey.
+                  Plataforma intuitiva y proceso de reserva simplificado. Compra tus billetes en minutos desde cualquier dispositivo.
                 </p>
               </div>
 
-              {/* Sustainable Tourism */}
-              <div className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
-                  <Globe className="h-8 w-8 text-orange-600" />
+              {/* Customer Support */}
+              <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                  <Globe className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Sustainable Tourism</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Soporte 24/7</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Responsible travel practices that support local communities and preserve Italy's cultural heritage for
-                  future generations.
+                  Atención al cliente en español disponible las 24 horas para ayudarte con cualquier consulta o cambio en tu viaje.
                 </p>
               </div>
             </div>
@@ -554,11 +921,10 @@ export default function JapanTravelLanding() {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center space-x-4 mb-6">
                 <div className="w-12 h-px bg-gray-300"></div>
-                <span className="text-gray-600 font-medium italic">Reviews</span>
+                <span className="text-gray-600 font-medium italic">Opiniones</span>
                 <div className="w-12 h-px bg-gray-300"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">What Our Travelers Say</h2>
-              <h3 className="text-3xl md:text-4xl text-gray-400">About Their Italian Adventures</h3>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Lo que dicen nuestros viajeros sobre sus experiencias en tren</h2>
             </div>
 
             {/* Reviews Grid */}
@@ -571,17 +937,16 @@ export default function JapanTravelLanding() {
                   ))}
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  "Our trip to Italy with ItalyTravel was absolutely magical! From the moment we arrived in Rome to our
-                  final day in Venice, every detail was perfectly planned. The local guides were knowledgeable and
-                  passionate."
+                  "Mi viaje en tren por Italia con ItalyTren fue absolutamente perfecto. Desde Roma hasta Venecia, todo estuvo 
+                  impecablemente organizado. Los trenes son cómodos, puntuales y el personal muy atento."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-gray-600 font-semibold">SM</span>
+                    <span className="text-gray-600 font-semibold">CM</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Sarah Mitchell</div>
-                    <div className="text-sm text-gray-500">New York, USA</div>
+                    <div className="font-semibold text-gray-900">Carlos Mendez</div>
+                    <div className="text-sm text-gray-500">Madrid, España</div>
                   </div>
                 </div>
               </div>
@@ -594,16 +959,16 @@ export default function JapanTravelLanding() {
                   ))}
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  "The attention to detail and personalized service exceeded our expectations. We discovered hidden gems
-                  in Tuscany that we never would have found on our own. Truly an unforgettable experience!"
+                  "La atención al detalle y los precios fueron excepcionales. Pude conocer la Toscana de manera cómoda y rápida. 
+                  Definitivamente la mejor forma de viajar por Italia."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-gray-600 font-semibold">MJ</span>
+                    <span className="text-gray-600 font-semibold">LP</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Michael Johnson</div>
-                    <div className="text-sm text-gray-500">London, UK</div>
+                    <div className="font-semibold text-gray-900">Laura Pérez</div>
+                    <div className="text-sm text-gray-500">Barcelona, España</div>
                   </div>
                 </div>
               </div>
@@ -616,16 +981,16 @@ export default function JapanTravelLanding() {
                   ))}
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  "From the Amalfi Coast to the art galleries of Florence, every moment was perfectly curated. The
-                  team's expertise in Italian culture and history made our journey educational and inspiring."
+                  "Desde la Costa Amalfitana hasta las galerías de arte de Florencia, cada momento fue perfectamente planificado. 
+                  Los trenes de alta velocidad son una maravilla de la ingeniería."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-gray-600 font-semibold">ER</span>
+                    <span className="text-gray-600 font-semibold">AR</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Emma Rodriguez</div>
-                    <div className="text-sm text-gray-500">Barcelona, Spain</div>
+                    <div className="font-semibold text-gray-900">Ana Rodríguez</div>
+                    <div className="text-sm text-gray-500">Valencia, España</div>
                   </div>
                 </div>
               </div>
@@ -641,7 +1006,7 @@ export default function JapanTravelLanding() {
                 </div>
                 <span className="text-gray-900 font-semibold">4.9/5</span>
                 <span className="text-gray-500">•</span>
-                <span className="text-gray-600">Based on 500+ reviews</span>
+                <span className="text-gray-600">Basado en más de 500 opiniones</span>
               </div>
             </div>
           </div>
@@ -649,18 +1014,17 @@ export default function JapanTravelLanding() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 pb-20 bg-white">
+      <section className="py-12 pb-20 bg-white" id="faqs">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
               <div className="flex items-center justify-center space-x-4 mb-6">
                 <div className="w-12 h-px bg-gray-300"></div>
-                <span className="text-gray-600 font-medium italic">FAQs</span>
+                <span className="text-gray-600 font-medium italic">Preguntas Frecuentes</span>
                 <div className="w-12 h-px bg-gray-300"></div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Explore our FAQ section for answers</h2>
-              <h3 className="text-3xl md:text-4xl text-gray-400">on trip planning.</h3>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Resuelve tus dudas sobre viajar en tren por Italia</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -668,10 +1032,11 @@ export default function JapanTravelLanding() {
               <div className="lg:col-span-2">
                 <div className="space-y-4">
                   {[
-                    "Do you offer customizable travel itineraries?",
-                    "What is the best time to visit Italy?",
-                    "Are your tours guided?",
-                    "What's included in the trip cost?",
+                    "¿Cómo puedo comprar billetes de tren online?",
+                    "¿Cuál es la mejor época para viajar en tren por Italia?",
+                    "¿Necesito reserva previa para los trenes?",
+                    "¿Puedo cambiar o cancelar mi billete?",
+                    "¿Qué documentos necesito para viajar?",
                   ].map((question, index) => (
                     <div
                       key={index}
@@ -699,11 +1064,11 @@ export default function JapanTravelLanding() {
                   </div>
 
                   <div className="relative z-10">
-                    <h4 className="text-xl font-bold mb-4">Still Have Questions?</h4>
+                    <h4 className="text-xl font-bold mb-4">¿Más Preguntas?</h4>
                     <p className="text-gray-300 mb-6 leading-relaxed">
-                      Our travel experts are here to help you plan the perfect Italian adventure.
+                      Nuestros expertos en viajes están aquí para ayudarte a planificar tu aventura italiana perfecta.
                     </p>
-                    <Button className="bg-white text-gray-900 hover:bg-gray-100 w-full">Contact Us</Button>
+                    <Button className="bg-white text-gray-900 hover:bg-gray-100 w-full transition-all duration-300 hover:scale-105 shadow-lg">Contáctanos</Button>
                   </div>
                 </div>
               </div>
@@ -720,7 +1085,7 @@ export default function JapanTravelLanding() {
             <div className="absolute inset-0">
               <Image
                 src="/images/naples-newsletter-bg.webp"
-                alt="Naples architecture with classical columns and dome"
+                alt="Arquitectura italiana con columnas clásicas y cúpula"
                 fill
                 className="object-cover"
               />
@@ -736,8 +1101,7 @@ export default function JapanTravelLanding() {
                   <span className="text-white/80 font-medium italic">Newsletter</span>
                   <div className="w-12 h-px bg-white/40"></div>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Subscribe to our Newsletter</h2>
-                <h3 className="text-3xl md:text-4xl text-white/80">Get the latest travel tips and exclusive offers</h3>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Suscríbete a nuestro Newsletter y recibe ofertas exclusivas y consejos de viaje</h2>
               </div>
 
               {/* Newsletter Form */}
@@ -745,10 +1109,10 @@ export default function JapanTravelLanding() {
                 <div className="flex gap-4">
                   <input
                     type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-full border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder="Ingresa tu email"
+                    className="flex-1 px-4 py-3 rounded-full border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
-                  <Button className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-full">Subscribe</Button>
+                  <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-6 py-3 rounded-full">Suscribirse</Button>
                 </div>
               </div>
             </div>
@@ -760,109 +1124,123 @@ export default function JapanTravelLanding() {
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-6">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold mb-4">Explore Japan with Us</h2>
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <Train className="w-8 h-8 text-blue-400" />
+              <h2 className="text-2xl font-bold">ItalyTren</h2>
+            </div>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Discover the perfect blend of ancient traditions and modern innovation. Let us guide you through an
-              unforgettable Japanese adventure.
+              Tu compañero de confianza para viajar en tren por Italia. Descubre la comodidad, velocidad y belleza 
+              de los ferrocarriles italianos con nosotros.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h4 className="font-semibold mb-4">Destinations</h4>
+              <h4 className="font-semibold mb-4">Rutas Populares</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Tokyo
+                    Roma - Nápoles
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Kyoto
+                    Roma - Florencia
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Osaka
+                    Milán - Venecia
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Hiroshima
+                    Ver todas las rutas
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Experiences</h4>
+              <h4 className="font-semibold mb-4">Tipos de Tren</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Cultural Tours
+                    Frecciarossa
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Food Experiences
+                    Italo
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Nature Adventures
+                    Frecciargento
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Traditional Stays
+                    Trenes Regionales
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
+              <h4 className="font-semibold mb-4">Soporte</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Contact Us
+                    Contacto
+                  </a>
+                </li>
+                <li>
+                  <a href="#faqs" className="hover:text-white transition-colors">
+                    FAQs
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    FAQ
+                    Guía de Viaje
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Travel Guide
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Booking Help
+                    Ayuda con Reservas
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
+              <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Aviso Legal
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Política de Privacidad
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Términos y Condiciones
+                  </a>
+                </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="h-4 w-4" />
-                  <span>info@japantour.com</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <Phone className="h-4 w-4" />
-                  <span>+81 3-1234-5678</span>
+                  <span>info@italytren.com</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 JapanTour. All rights reserved.</p>
+            <p>&copy; 2024 ItalyTren. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
